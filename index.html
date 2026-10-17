@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0d5c3d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Peygamberler">
+    <title>Peygamberler Tarihi | History of the Prophets</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Home Screen -->
+        <div id="home-screen" class="screen active">
+            <header class="home-header">
+                <div class="title-container">
+                    <div class="arabic-bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+                    <h1 class="app-title">
+                        <span class="tr">Peygamberler Tarihi</span>
+                        <span class="en">History of the Prophets</span>
+                    </h1>
+                    <div class="subtitle">
+                        <span class="tr">Kur'an'da İsmi Geçen</span>
+                        <span class="en">Named in the Quran</span>
+                    </div>
+                </div>
+                <button id="menu-btn" class="menu-btn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </header>
+
+            <div class="home-content">
+                <div class="islamic-pattern"></div>
+                <div class="auth-buttons">
+                    <button id="register-btn" class="auth-btn primary">
+                        <span class="tr">Kayıt Ol</span>
+                        <span class="en">Register</span>
+                    </button>
+                    <button id="login-btn" class="auth-btn secondary">
+                        <span class="tr">Giriş Yap</span>
+                        <span class="en">Login</span>
+                    </button>
+                </div>
+                <div class="language-toggle">
+                    <button class="lang-btn active" data-lang="tr">Türkçe</button>
+                    <button class="lang-btn" data-lang="en">English</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prophet List Drawer -->
+        <div id="drawer" class="drawer">
+            <div class="drawer-header">
+                <h2>
+                    <span class="tr">Peygamberler</span>
+                    <span class="en">Prophets</span>
+                </h2>
+                <button id="close-drawer" class="close-btn">&times;</button>
+            </div>
+            <div id="prophet-list" class="prophet-list"></div>
+        </div>
+
+        <!-- Prophet Detail Overlay -->
+        <div id="detail-overlay" class="detail-overlay">
+            <div class="detail-header">
+                <button id="back-btn" class="back-btn">
+                    <span class="arrow">←</span>
+                    <span class="tr">Geri</span>
+                    <span class="en">Back</span>
+                </button>
+                <h2 id="detail-title"></h2>
+                <button id="speech-btn" class="speech-btn" title="Sesli Oku">
+                    🔊
+                </button>
+            </div>
+            <div class="detail-content">
+                <div class="prophet-arabic" id="detail-arabic"></div>
+                <div class="prophet-name" id="detail-name"></div>
+                <div id="detail-story" class="story"></div>
+                <div class="references">
+                    <h3>
+                        <span class="tr">Kur'an Referansları</span>
+                        <span class="en">Quranic References</span>
+                    </h3>
+                    <div id="detail-refs"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Auth Modal -->
+        <div id="auth-modal" class="modal">
+            <div class="modal-content">
+                <button class="close-modal">&times;</button>
+                <h2 id="auth-title"></h2>
+                <form id="auth-form">
+                    <input type="email" id="auth-email" placeholder="Email" required>
+                    <input type="password" id="auth-password" placeholder="Password / Şifre" required>
+                    <button type="submit" class="auth-submit">
+                        <span class="tr">Devam Et</span>
+                        <span class="en">Continue</span>
+                    </button>
+                </form>
+                <p class="auth-note">
+                    <span class="tr">Bu demo bir simülasyondur. Veriler yerel olarak saklanır.</span>
+                    <span class="en">This is a demo simulation. Data is stored locally.</span>
+                </p>
+            </div>
+        </div>
+
+        <div id="overlay" class="overlay"></div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
